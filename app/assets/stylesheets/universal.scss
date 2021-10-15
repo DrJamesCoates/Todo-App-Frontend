@@ -1,0 +1,87 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  padding-top: 60px;
+  background-color: rgb(255, 255, 255);
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+
+.btn {
+  font-family: sans-serif;
+  background-color: rgb(46, 46, 46);
+  color: #f9c31a;
+  width: 100%;
+  font-size: 1.2em;
+  letter-spacing: -0.5px;
+  &:hover {
+    color: #d61a1f;
+    background-color: rgb(46, 46, 46);
+  }
+}
+
+.form-control {
+  &:focus {
+    
+  }
+}
+
+/* typography */ 
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  letter-spacing: -2px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  text-align: center;
+}
+
+.todo-link {
+  color: rgb(0, 0, 0);
+  &:hover {
+    text-decoration: none;
+    color: #f9c31a;
+  }
+}

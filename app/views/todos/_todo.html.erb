@@ -1,0 +1,4 @@
+<li>
+  <h3><%= link_to "#{todo[:title]}", todo_url(todo[:id]), class: "todo-link" %></h3>
+  <h5>Items: <%= todo[:items].count %></h5>
+</li>

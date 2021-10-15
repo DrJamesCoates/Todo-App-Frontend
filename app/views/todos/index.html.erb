@@ -1,0 +1,15 @@
+<% provide(:title, "All Todos") %>
+
+<div class="row">
+  <aside class="col-md-4">
+    <h1>All Todos</h1>
+    <h2>Count: <%= @count %></h2>
+  </aside>
+  <div class="col-md-6">
+    <ul>
+      <% @all_todos_object.each do |todo| %>
+        <%= render partial: 'todo', object: todo %>
+      <% end %>
+    </ul>
+  </div>
+</div>

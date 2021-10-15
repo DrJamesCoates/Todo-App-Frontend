@@ -1,0 +1,16 @@
+<% provide(:title, "Todo") %>
+
+<div class="row">
+  <aside class="col-md-4">
+    <h1><%= @title %></h1>
+    <p><%= link_to "Edit", edit_todo_url(params[:id]), id: "quicklink" %></p>
+    <p><%= link_to "Delete", todo_url(params[:id]), method: :delete, data: { confirm: "Are you sure?" }, id: "quicklink" %></p>
+  </aside>
+  <div class="col-md-8">
+    <h3>Items count: <%= @items_count %><h3>
+    <% if @items_count > 0 %>
+      <p>Items here<p>
+    <% end %>
+  </div>
+</div>
+

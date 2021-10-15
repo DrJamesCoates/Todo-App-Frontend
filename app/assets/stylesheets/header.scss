@@ -1,0 +1,28 @@
+/* header */
+
+#logo {
+  font-family: sans-serif;
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #f9c31a;
+  letter-spacing: -0.5px;
+  padding-top: 10px;
+  font-weight: bold;
+  &:hover {
+    color: #d51a1f;
+    text-decoration: none;
+  }
+}
+
+#quicklink {
+  font-family: sans-serif;
+  letter-spacing: -0.5px;
+  font-size: 1.3em;
+  color: #f9c31a;
+  &:hover {
+    font-size: 1.4em;
+    text-decoration: none;
+    color: #f8b71d;
+  }
+}
