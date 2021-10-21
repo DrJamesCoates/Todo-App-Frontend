@@ -1,54 +1,74 @@
 class TodosController < ApplicationController
 
+  before_action :logged_in_user
+
   def new
   end
 
   def create
-    response = create_todo(todo_params)
-    response_object = JSON.parse(response.body, symbolize_names: true)
-    if status == 200
-      # flash message
-      redirect_to todo_url(response_object[:id])
-    else
-      # flash message
-      render 'todos/new'
+    @todo = TodoApi::Todo.new(nil, session[:auth_token])
+    @todo.create(todo_params)
+    if response_status_ok?(@todo.response)
+      redirect_to todo_url(@todo.id)
+    else 
+      api_error_response(@todo)
     end
   end
 
   def show
-    response = show_todo(params[:id])
-    @todos_object = JSON.parse(response.body, symbolize_names: true)
-    @title = @todos_object[:title]
-    @items_count = @todos_object[:items].count
-  end
-
-  def edit
-  end
-
-  def update
-    response = update_todo(todo_params, params[:id])
-    if status == 200
-      # flash message
-      redirect_to todo_url(params[:id])
+    @todo = TodoApi::Todo.new(params[:id], session[:auth_token])
+    @todo.show
+    if response_status_ok?(@todo.response)
+      @title = @todo.title
+      @deadline = @todo.deadline
+      @all_items = @todo.items.sort_by{ |item| item[:done] == true ? 1 : 0 }
+      @items_count = @all_items.count
+      @completed_items_count = @all_items.count{ |item| item[:done] == true }
     else
-      # flash message
-      render 'edit'
+      api_error_response(@todo)
     end
   end
 
   def index
-    response = index_todos
-    @all_todos_object = JSON.parse(response.body, symbolize_names: true)
-    @count = @all_todos_object.count
+    @todos = TodoApi::Todo.new(nil, session[:auth_token])
+    @todos.index
+    if response_status_ok?(@todos.response)
+      @all_todos = @todos.all_todos.sort_by{ |todo| todo[:deadline] }
+      @count = @all_todos.count
+    else
+      api_error_response(@todos)
+    end
+  end
+
+  def edit
+    @title = todo_params[:title]
+    @deadline = todo_params[:deadline]
+  end
+
+  def update
+    @todo = TodoApi::Todo.new(params[:id], session[:auth_token])
+    @todo.update(todo_params)
+    if response_status_ok?(@todo.response)
+      flash[:success] = "Todo updated!"
+      redirect_to todo_url(params[:id])
+    else
+      api_error_response(@todo)
+    end
   end
 
   def destroy
-    delete_todo(params[:id])
-    redirect_to todos_url
+    @todo = TodoApi::Todo.new(params[:id], session[:auth_token])
+    @todo.destroy
+    if response_status_ok?(@todo.response)
+      flash[:success] = "Todo deleted!"
+      redirect_to todos_url
+    else
+      api_error_response(@todo)
+    end
   end
 
   private
     def todo_params
-      params.permit(:title)
+      params.permit(:title, :deadline)
     end
 end

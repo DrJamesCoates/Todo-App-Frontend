@@ -1,4 +1,5 @@
 <li>
   <h3><%= link_to "#{todo[:title]}", todo_url(todo[:id]), class: "todo-link" %></h3>
-  <h5>Items: <%= todo[:items].count %></h5>
+  <h4><i>Deadline: <%= todo[:deadline] %></i></h4>
+  <h5>Items: <%= todo[:items].count %> | <i>Completed: <%= todo[:items].count{ |item| item[:done] == true}%></i></h5>
 </li>

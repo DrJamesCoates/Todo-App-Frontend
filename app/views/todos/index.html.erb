@@ -3,13 +3,16 @@
 <div class="row">
   <aside class="col-md-4">
     <h1>All Todos</h1>
-    <h2>Count: <%= @count %></h2>
   </aside>
-  <div class="col-md-6">
-    <ul>
-      <% @all_todos_object.each do |todo| %>
-        <%= render partial: 'todo', object: todo %>
-      <% end %>
-    </ul>
+  <div class="col-md-8">
+    <h2 style="text-align: left; padding-left: 35px;">Count: <%= @count %></h2>
+    <h4 style="text-align: left; padding-left: 35px;"><%= link_to "New todo", new_todo_path, id: "quicklink" %></h4>
+    <div class="page-top">
+      <ul>
+        <% @all_todos.each do |todo| %>
+          <%= render partial: 'todo', object: todo %>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>

@@ -13,4 +13,3 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
-require "#{Rails.root}/app/lib/todo_api/user.rb"

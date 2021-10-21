@@ -1,0 +1,20 @@
+<% provide(:title, "Edit Item") %>
+
+<h1>Edit</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+    <%= form_with(url: todo_item_url, method: :put, local: true) do |f| %>
+
+      <%= f.hidden_field :done, value: @done %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name,  class: "form-control" %>
+
+      <%= f.submit "Update item", class: "btn btn-primary" %>
+    
+    <% end %>
+    
+  </div>
+</div>

@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 body {
   padding-top: 60px;
   background-color: rgb(255, 255, 255);
@@ -46,11 +47,6 @@ input {
   }
 }
 
-.form-control {
-  &:focus {
-    
-  }
-}
 
 /* typography */ 
 
@@ -78,10 +74,16 @@ p {
   text-align: center;
 }
 
-.todo-link {
-  color: rgb(0, 0, 0);
-  &:hover {
-    text-decoration: none;
-    color: #f9c31a;
-  }
+ol {
+  padding: 0;
+  list-style: none;
 }
+
+ul {
+  list-style: none;
+}
+
+.page-top {
+  border-top: 1px solid #f9c31a;
+}
+

@@ -2,15 +2,21 @@
 
 <div class="row">
   <aside class="col-md-4">
-    <h1><%= @title %></h1>
-    <p><%= link_to "Edit", edit_todo_url(params[:id]), id: "quicklink" %></p>
-    <p><%= link_to "Delete", todo_url(params[:id]), method: :delete, data: { confirm: "Are you sure?" }, id: "quicklink" %></p>
+    <h1 style="text-align: left;"><%= @title %></h1>
+    <h2 style="text-align: left;">Deadline: <%= @deadline %></h2>
+    <p style="text-align: left;"><%= link_to "Edit", edit_todo_url(params[:id], title: @title, deadline: @deadline), id: "quicklink" %></p>
+    <p style="text-align: left;"><%= link_to "Delete", todo_url(params[:id]), method: :delete, data: { confirm: "Are you sure?" }, id: "quicklink" %></p>
   </aside>
-  <div class="col-md-8">
-    <h3>Items count: <%= @items_count %><h3>
-    <% if @items_count > 0 %>
-      <p>Items here<p>
-    <% end %>
-  </div>
+  <h2 style="text-align: left; padding-left: 404px;"><i>Items completed: <%= @completed_items_count %> / <%= @items_count %></i></h2>
+  <h4 class="item-count"><%= link_to "Add item", new_todo_item_path(todo_id: params[:id], todo_title: @title), id: "quicklink" %></h4>
+  <% if @items_count > 0 %>
+    <div class="col-md-8 page-top">
+      <ol id="item-list-numbers">
+        <% @all_items.each do |item| %>
+          <%= render partial: 'items/item', object: item %>
+        <% end %>
+      </ol>
+    </div>
+  <% end %>
 </div>
 

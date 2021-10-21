@@ -1,4 +1,4 @@
-<% provide(:title, "Edit") %>
+<% provide(:title, "Edit Todo") %>
 
 <h1>Edit</h1>
 
@@ -8,9 +8,12 @@
     <%= form_with(url: todo_url, method: :put, local: true) do |f| %>
 
       <%= f.label :title %>
-      <%= f.text_field :title, class: "form-control" %>
+      <%= f.text_field :title, class: "form-control", value: @title %>
 
-      <%= f.submit "Update", class: "btn btn-primary" %>
+      <%= f.label :deadline %>
+      <%= f.date_field :deadline, min: Date.today, class: "form-control", value: @deadline %>
+
+      <%= f.submit "Update todo", class: "btn btn-primary" %>
     
     <% end %>
   

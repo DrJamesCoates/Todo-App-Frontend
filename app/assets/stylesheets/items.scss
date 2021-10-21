@@ -1,0 +1,52 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+#item-list-numbers {
+  font-size: 18px;
+}
+
+.item-count {
+  font-size: 16px; 
+  padding-left: 404px; 
+  text-align: left; 
+  padding-top: 10px; 
+  padding-bottom: 10px;
+}
+
+#item-complete {
+  font-size: 0.8em;
+  color: #f8b71d;
+  border-style: solid;
+  border-color: #ffdd76;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 5px;
+  &:hover {
+    text-decoration: none;
+    font-size: 0.9em;
+    color: #d51a1f;
+    border-color: #f05f64;
+  }
+}
+#item-incomplete {
+  font-size: 0.8em;
+  color: #d51a1f;
+  border-style: solid;
+  border-color: #f05f64;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 5px;
+  &:hover {
+    text-decoration: none;
+    font-size: 0.9em;
+    color: #f8b71d;
+    border-color: #ffdd76;
+  }
+}
+
+.item-status {
+  display: inline;
+  padding-right: 0px;
+  float: right;
+}
