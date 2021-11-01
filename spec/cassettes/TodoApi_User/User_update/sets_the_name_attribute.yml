@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://127.0.0.1:3000/user/513
+    body:
+      encoding: UTF-8
+      string: '{"name":"Update Name","email":"update@email.com","password":"password12","password_confirmation":"password12"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OTcsImV4cCI6MTYzNTU3NDY0NH0.Xg_9sljeCATwK7KH75XmpVfVKTLldBZX9jodMu7q7uE
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"956d6d526d18a651b97282968ee72241"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9bb2350a-f69e-48a8-a8ef-0129470adff9
+      X-Runtime:
+      - '0.229974'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"name":"Update Name","email":"update@email.com","password_digest":"$2a$12$YYCAMkscm9F6vFGuC1iGMuniFxUe4..hTOldpsEUcJGHKcTKKf4Xu","id":513,"created_at":"2021-10-29T09:57:41.205Z","updated_at":"2021-10-29T09:58:07.929Z"}'
+  recorded_at: Fri, 29 Oct 2021 09:58:07 GMT
+recorded_with: VCR 6.0.0

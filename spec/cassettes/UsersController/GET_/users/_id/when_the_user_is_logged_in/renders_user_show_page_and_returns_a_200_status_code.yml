@@ -1,0 +1,158 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:3000/auth/login
+    body:
+      encoding: UTF-8
+      string: '{"email":"noel@miller.com","password":"password"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"b2d7dec6813f0f1ca1b72cf37855d48f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b3b6c233-e58f-49a1-a81c-495615193277
+      X-Runtime:
+      - '0.440340'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"user_id":517,"auth_token":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MTcsImV4cCI6MTYzNTU5MzcxMn0.WQ_K4IPrJ5UgZQQYz_NMLQnHr_x55TtsYgFzvx5S6Ps"}'
+  recorded_at: Fri, 29 Oct 2021 11:35:12 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:3000/users/517
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MTcsImV4cCI6MTYzNTU5MzcxMn0.WQ_K4IPrJ5UgZQQYz_NMLQnHr_x55TtsYgFzvx5S6Ps
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"c1dff7ac97ee2d290b8a7ac6d192f183"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 93285605-1e05-4349-9d1f-ea368a5212a7
+      X-Runtime:
+      - '0.005116'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"auth_token":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MTcsImV4cCI6MTYzNTU5MzcxMn0.WQ_K4IPrJ5UgZQQYz_NMLQnHr_x55TtsYgFzvx5S6Ps","user_id":517,"user_name":"Noel
+        Miller","user_email":"noel@miller.com"}'
+  recorded_at: Fri, 29 Oct 2021 11:35:12 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:3000/todos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MTcsImV4cCI6MTYzNTU5MzcxMn0.WQ_K4IPrJ5UgZQQYz_NMLQnHr_x55TtsYgFzvx5S6Ps
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2b1d5c79-b934-48d6-b1cc-75c7e89785cb
+      X-Runtime:
+      - '0.007457'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: "[]"
+  recorded_at: Fri, 29 Oct 2021 11:35:12 GMT
+recorded_with: VCR 6.0.0

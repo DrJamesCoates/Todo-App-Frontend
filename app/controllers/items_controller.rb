@@ -15,12 +15,14 @@ class ItemsController < ApplicationController
       @done = @item.done
       redirect_to todo_url(@item.todo_id)
     else
-      api_error_response(@item)
+      api_error_response(@item, new_todo_item_url, nil)
     end
   end
 
   def edit
-    @done = params[:done]
+    @item = TodoApi::Item.new(params[:id], nil, params[:todo_id], session[:auth_token])
+    @item.show
+    api_error_response(@item, todos_url(@item.todo_id), nil) unless response_status_ok?(@item.response)
   end
 
   def update
@@ -30,7 +32,9 @@ class ItemsController < ApplicationController
       flash[:success] = "Todo item updated!"
       redirect_to todo_url(item_params[:todo_id])
     else
-      api_error_response(@item)
+      @old_item = TodoApi::Item.new(params[:id])
+      @old_item.show
+      api_error_response(@item, edit_todo_item_url, @old_item)
     end
   end
 
@@ -41,7 +45,7 @@ class ItemsController < ApplicationController
       flash[:success] = "Item deleted!"
       redirect_to todo_url(item_params[:todo_id])
     else
-      api_error_response(@item)
+      api_error_response(@item, todo_url(item_params[:todo_id]), nil)
     end
   end
 

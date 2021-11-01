@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:3000/todos/554/items
+    body:
+      encoding: UTF-8
+      string: '{"name":"","done":false,"todo_id":554}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OTcsImV4cCI6MTYzNTU3NDY0NH0.Xg_9sljeCATwK7KH75XmpVfVKTLldBZX9jodMu7q7uE
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - eb1ee871-457d-4fed-948f-997ae1930b3f
+      X-Runtime:
+      - '0.008180'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"message":"Validation failed: Name can''t be blank"}'
+  recorded_at: Fri, 29 Oct 2021 09:01:12 GMT
+recorded_with: VCR 6.0.0

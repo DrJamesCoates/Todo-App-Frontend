@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:3000/auth/login
+    body:
+      encoding: UTF-8
+      string: '{"email":"noel@miller.com","password":"password"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"764f29a673109cd9eaa56012d884c95d"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2703db66-a189-412a-bb71-a58cc5497500
+      X-Runtime:
+      - '0.536053'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"user_id":517,"auth_token":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MTcsImV4cCI6MTYzNTU5MzgyMH0.x3xDZ_lYrUAMIc5ZPD69P5htmvN9fxiBbKMonQSQa1o"}'
+  recorded_at: Fri, 29 Oct 2021 11:37:00 GMT
+- request:
+    method: put
+    uri: http://127.0.0.1:3000/user/517
+    body:
+      encoding: UTF-8
+      string: '{"name":"James","email":"james@example.com","password":"password123","password_confirmation":"password123"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MTcsImV4cCI6MTYzNTU5MzgyMH0.x3xDZ_lYrUAMIc5ZPD69P5htmvN9fxiBbKMonQSQa1o
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"7573c68611739079fc997dabdf9da0f8"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 694c8cfc-2177-40f4-a2b3-d82bf17f5a2c
+      X-Runtime:
+      - '0.234404'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"name":"James","email":"james@example.com","password_digest":"$2a$12$gNnngiJ7g2x5gWDWFpNmk.tKTFrJSsj.hU3vIj4Izn074YhVgeYjW","id":517,"created_at":"2021-10-29T11:28:59.984Z","updated_at":"2021-10-29T11:37:01.188Z"}'
+  recorded_at: Fri, 29 Oct 2021 11:37:01 GMT
+recorded_with: VCR 6.0.0

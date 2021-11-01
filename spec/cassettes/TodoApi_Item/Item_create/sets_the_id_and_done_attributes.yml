@@ -1,0 +1,108 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:3000/todos
+    body:
+      encoding: UTF-8
+      string: '{"title":"Create Todo","deadline":"2021-10-29"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OTcsImV4cCI6MTYzNTU3NDY0NH0.Xg_9sljeCATwK7KH75XmpVfVKTLldBZX9jodMu7q7uE
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"c4e3e377a7be43b8bad3f1463db700a5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1e1d55ef-7d6a-47f6-8807-88e8088c3b9b
+      X-Runtime:
+      - '0.011146'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":554,"title":"Create Todo","created_by":"497","created_at":"2021-10-29T08:59:55.001Z","deadline":"2021-10-29","items":[]}'
+  recorded_at: Fri, 29 Oct 2021 08:59:55 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:3000/todos/554/items
+    body:
+      encoding: UTF-8
+      string: '{"name":"First Item","done":false,"todo_id":554}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OTcsImV4cCI6MTYzNTU3NDY0NH0.Xg_9sljeCATwK7KH75XmpVfVKTLldBZX9jodMu7q7uE
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"e4a82240b2d8faad66c59f90c66f7920"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3480074d-0ee5-441a-8063-263ddfa8f012
+      X-Runtime:
+      - '0.015069'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":554,"title":"Create Todo","created_by":"497","created_at":"2021-10-29T08:59:55.001Z","deadline":"2021-10-29","items":[{"id":239,"name":"First
+        Item","done":false,"todo_id":554,"created_at":"2021-10-29T08:59:55.019Z","updated_at":"2021-10-29T08:59:55.019Z"}]}'
+  recorded_at: Fri, 29 Oct 2021 08:59:55 GMT
+recorded_with: VCR 6.0.0

@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:3000/auth/login
+    body:
+      encoding: UTF-8
+      string: '{"email":"noel@miller.com","password":"password"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"b83f63e1a3223b888495c93c90dd32b9"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8348f9f6-ff27-46ca-b6db-efa344625cec
+      X-Runtime:
+      - '0.444991'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"user_id":518,"auth_token":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MTgsImV4cCI6MTYzNTYwMDI4MX0.AJOVavdcbYf6GGOEfm1WXVpzQvzVTyJyH2sYgtn5N3c"}'
+  recorded_at: Fri, 29 Oct 2021 13:24:41 GMT
+recorded_with: VCR 6.0.0

@@ -11,7 +11,7 @@ class TodosController < ApplicationController
     if response_status_ok?(@todo.response)
       redirect_to todo_url(@todo.id)
     else 
-      api_error_response(@todo)
+      api_error_response(@todo, new_todo_url, @todo)
     end
   end
 
@@ -19,13 +19,11 @@ class TodosController < ApplicationController
     @todo = TodoApi::Todo.new(params[:id], session[:auth_token])
     @todo.show
     if response_status_ok?(@todo.response)
-      @title = @todo.title
-      @deadline = @todo.deadline
       @all_items = @todo.items.sort_by{ |item| item[:done] == true ? 1 : 0 }
       @items_count = @all_items.count
       @completed_items_count = @all_items.count{ |item| item[:done] == true }
     else
-      api_error_response(@todo)
+      api_error_response(@todo, user_url(current_user), @todo)
     end
   end
 
@@ -36,13 +34,14 @@ class TodosController < ApplicationController
       @all_todos = @todos.all_todos.sort_by{ |todo| todo[:deadline] }
       @count = @all_todos.count
     else
-      api_error_response(@todos)
+      api_error_response(@todos, user_url(current_user), @todos)
     end
   end
 
   def edit
-    @title = todo_params[:title]
-    @deadline = todo_params[:deadline]
+    @todo = TodoApi::Todo.new(params[:id], session[:auth_token])
+    @todo.show
+    api_error_response(@todo, user_url(current_user), @todo) unless response_status_ok?(@todo.response)
   end
 
   def update
@@ -52,7 +51,9 @@ class TodosController < ApplicationController
       flash[:success] = "Todo updated!"
       redirect_to todo_url(params[:id])
     else
-      api_error_response(@todo)
+      @old_todo = TodoApi::Todo.new(params[:id], session[:auth_token])
+      @old_todo.show
+      api_error_response(@todo, edit_todo_url(params[:id]), @old_todo)
     end
   end
 
@@ -63,7 +64,7 @@ class TodosController < ApplicationController
       flash[:success] = "Todo deleted!"
       redirect_to todos_url
     else
-      api_error_response(@todo)
+      api_error_response(@todo, user_url(current_user))
     end
   end
 

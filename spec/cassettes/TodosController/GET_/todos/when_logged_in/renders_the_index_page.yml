@@ -1,0 +1,108 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:3000/auth/login
+    body:
+      encoding: UTF-8
+      string: '{"email":"noel@miller.com","password":"password"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"df13b856ad0525568c4c055bb4c0cf1a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2a7358b8-5d74-4e95-b470-fdb82d60f40c
+      X-Runtime:
+      - '0.439200'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"user_id":518,"auth_token":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MTgsImV4cCI6MTYzNTU5NzA2MX0.dXbHLP85-DHUbxJvFdhtrJQStzLtZ9oyN6DcBGY_hrY"}'
+  recorded_at: Fri, 29 Oct 2021 12:31:01 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:3000/todos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MTgsImV4cCI6MTYzNTU5NzA2MX0.dXbHLP85-DHUbxJvFdhtrJQStzLtZ9oyN6DcBGY_hrY
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"815adf55f778b0dc0130d193589181ff"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - fddeea67-d60b-4d40-82d4-2733dd793e55
+      X-Runtime:
+      - '0.023651'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":556,"title":"New Todo","created_by":"518","created_at":"2021-10-29T11:54:30.178Z","deadline":"2021-10-29","items":[]},{"id":557,"title":"New
+        Todo","created_by":"518","created_at":"2021-10-29T11:58:10.467Z","deadline":"2021-10-29","items":[]},{"id":558,"title":"New
+        Todo","created_by":"518","created_at":"2021-10-29T12:17:01.980Z","deadline":"2021-10-29","items":[]},{"id":559,"title":"New
+        Todo","created_by":"518","created_at":"2021-10-29T12:26:44.528Z","deadline":"2021-10-29","items":[]}]'
+  recorded_at: Fri, 29 Oct 2021 12:31:01 GMT
+recorded_with: VCR 6.0.0

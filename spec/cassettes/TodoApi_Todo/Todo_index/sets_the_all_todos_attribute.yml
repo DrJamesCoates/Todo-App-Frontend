@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://127.0.0.1:3000/todos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OTcsImV4cCI6MTYzNTU3NDY0NH0.Xg_9sljeCATwK7KH75XmpVfVKTLldBZX9jodMu7q7uE
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"61280941c6774085dfdfb06a6fe0a987"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 22c469d9-395c-481d-9bb2-df9a54984016
+      X-Runtime:
+      - '0.066606'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":545,"title":"Create Todo","created_by":"497","created_at":"2021-10-29T06:14:15.476Z","deadline":"2021-10-29","items":[]},{"id":547,"title":"Create
+        Todo","created_by":"497","created_at":"2021-10-29T06:26:17.262Z","deadline":"2021-10-29","items":[]},{"id":548,"title":"Create
+        Todo","created_by":"497","created_at":"2021-10-29T08:30:37.494Z","deadline":"2021-10-29","items":[{"id":233,"name":"First
+        Item","done":false,"todo_id":548,"created_at":"2021-10-29T08:30:37.522Z","updated_at":"2021-10-29T08:30:37.522Z"}]},{"id":549,"title":"Create
+        Todo","created_by":"497","created_at":"2021-10-29T08:31:24.570Z","deadline":"2021-10-29","items":[]},{"id":550,"title":"Create
+        Todo","created_by":"497","created_at":"2021-10-29T08:38:14.761Z","deadline":"2021-10-29","items":[]},{"id":551,"title":"Create
+        Todo","created_by":"497","created_at":"2021-10-29T08:43:07.250Z","deadline":"2021-10-29","items":[]},{"id":552,"title":"Create
+        Todo","created_by":"497","created_at":"2021-10-29T08:51:01.140Z","deadline":"2021-10-29","items":[{"id":237,"name":"First
+        Item","done":false,"todo_id":552,"created_at":"2021-10-29T08:51:01.162Z","updated_at":"2021-10-29T08:51:01.162Z"}]},{"id":553,"title":"Create
+        Todo","created_by":"497","created_at":"2021-10-29T08:52:45.639Z","deadline":"2021-10-29","items":[{"id":238,"name":"Update
+        Item","done":true,"todo_id":553,"created_at":"2021-10-29T08:52:45.656Z","updated_at":"2021-10-29T08:56:13.195Z"}]},{"id":554,"title":"Create
+        Todo","created_by":"497","created_at":"2021-10-29T08:59:55.001Z","deadline":"2021-10-29","items":[]},{"id":555,"title":"Create
+        Todo","created_by":"497","created_at":"2021-10-29T09:47:51.444Z","deadline":"2021-10-29","items":[]}]'
+  recorded_at: Fri, 29 Oct 2021 09:49:51 GMT
+recorded_with: VCR 6.0.0

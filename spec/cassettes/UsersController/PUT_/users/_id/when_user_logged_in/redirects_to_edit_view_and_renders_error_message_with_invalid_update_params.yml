@@ -1,0 +1,157 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:3000/auth/login
+    body:
+      encoding: UTF-8
+      string: '{"email":"noel@miller.com","password":"password"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"764f29a673109cd9eaa56012d884c95d"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a532c475-e8c5-4653-a456-49cb29e11684
+      X-Runtime:
+      - '0.439717'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"user_id":517,"auth_token":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MTcsImV4cCI6MTYzNTU5MzgyMH0.x3xDZ_lYrUAMIc5ZPD69P5htmvN9fxiBbKMonQSQa1o"}'
+  recorded_at: Fri, 29 Oct 2021 11:37:00 GMT
+- request:
+    method: put
+    uri: http://127.0.0.1:3000/user/517
+    body:
+      encoding: UTF-8
+      string: '{"name":"","email":"","password":"foo","password_confirmation":"bar"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MTcsImV4cCI6MTYzNTU5MzgyMH0.x3xDZ_lYrUAMIc5ZPD69P5htmvN9fxiBbKMonQSQa1o
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - eb3bbb30-f304-45b9-b503-6ff27a6cc949
+      X-Runtime:
+      - '0.223972'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"message":"Validation failed: Password confirmation doesn''t match
+        Password, Name can''t be blank, Email can''t be blank"}'
+  recorded_at: Fri, 29 Oct 2021 11:37:00 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:3000/users/517
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MTcsImV4cCI6MTYzNTU5MzgyMH0.x3xDZ_lYrUAMIc5ZPD69P5htmvN9fxiBbKMonQSQa1o
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"40f63cbb55e416dd8b332acbb2c50c83"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 71cedc39-217a-4c79-aaf1-8e58d4100eee
+      X-Runtime:
+      - '0.004506'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"auth_token":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MTcsImV4cCI6MTYzNTU5MzgyMH0.x3xDZ_lYrUAMIc5ZPD69P5htmvN9fxiBbKMonQSQa1o","user_id":517,"user_name":"Noel
+        Miller","user_email":"noel@miller.com"}'
+  recorded_at: Fri, 29 Oct 2021 11:37:00 GMT
+recorded_with: VCR 6.0.0

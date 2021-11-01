@@ -11,53 +11,52 @@ class UsersController < ApplicationController
     if response_status_ok?(@user.response)
       flash[:success] = "Welcome to the Todo App!"
       log_in(user_params[:password], @user.id, @user.auth_token)
-      redirect_to user_url(@user.id)
+      redirect_to user_url(current_user)
     else
-      api_error_response(@user)
+      api_error_response(@user, signup_url, @user)
     end
   end
 
   def show
-    @user = TodoApi::User.new(params[:id], session[:auth_token])
+    @user = TodoApi::User.new(current_user, session[:auth_token])
     @user.show
     if response_status_ok?(@user.response)
-      @name = @user.name
-      @email = @user.email
       @todo = TodoApi::Todo.new(nil, session[:auth_token])
       @todo.index
       @all_todos = @todo.all_todos.sort_by{ |todo| todo[:deadline] }
       @todos_count = @all_todos.count
     else
-      api_error_response(@user)
+      api_error_response(@user, root_url, nil)
     end
   end
 
   def edit
-    @id = params[:id]
-    @name = params[:name]
-    @email = user_params[:email]
-    @password = session[:password]
+    @user = TodoApi::User.new(current_user, session[:auth_token])
+    @user.show
+    api_error_response(@user, user_url(@user.id), @user) unless response_status_ok?(@user.response)
   end
 
   def update
-    @user = TodoApi::User.new(params[:id], session[:auth_token])
+    @user = TodoApi::User.new(current_user, session[:auth_token])
     @user.update(user_params)
     if response_status_ok?(@user.response)
       flash[:success] = "Profile updated!"
       redirect_to user_url(@user.id)
     else
-      api_error_response(@user)
+      @old_user = TodoApi::User.new(current_user, session[:auth_token])
+      @old_user.show
+      api_error_response(@user, edit_user_url(@user.id), @old_user)
     end
   end
 
   def destroy
-    @user = TodoApi::User.new(params[:id], session[:auth_token])
+    @user = TodoApi::User.new(current_user, session[:auth_token])
     @user.destroy
     if response_status_ok?(@user.response)
       log_out
       redirect_to root_url
     else
-      api_error_response(@user)
+      api_error_response(@user, root_url, nil)
     end
   end
 

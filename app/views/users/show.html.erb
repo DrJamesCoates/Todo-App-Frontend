@@ -2,9 +2,9 @@
 
 <div class="row">
   <aside class="col-md-4">
-    <h1 style="text-align: left;"><%= @name %></h1>
-    <p style="text-align: left;"><%= link_to "Edit profile", edit_user_url(params[:id], name: @name, email: @email), id: "quicklink" %></p>
-    <p style="text-align: left;"><%= link_to "Delete account", user_path(@user.id), method: :delete, data: { confirm: "Are you sure?" }, id: "quicklink" %></p>
+    <h1 style="text-align: left;"><%= @user.name %></h1>
+    <p style="text-align: left;"><%= link_to "Edit profile", edit_user_url(current_user), id: "quicklink" %></p>
+    <p style="text-align: left;"><%= link_to "Delete account", user_path(current_user), method: :delete, data: { confirm: "Are you sure?" }, id: "quicklink" %></p>
   </aside>
   <div class="col-md-8">
     <h2 style="text-align: left; padding-left: 35px;">Todos count: <%= @todos_count %></h2>
@@ -12,9 +12,7 @@
     <div class="page-top">
       <% if @todos_count > 0 %>
         <ul>
-          <% @all_todos.each do |todo| %>
-            <%= render partial: 'todos/todo', object: todo %>
-          <% end %>
+          <%= render partial: 'todos/todo', collection: @all_todos, as: :todo %>
         </ul>
       <% end %>
     </div>

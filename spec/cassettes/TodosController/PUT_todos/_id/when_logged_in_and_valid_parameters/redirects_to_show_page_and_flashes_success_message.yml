@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:3000/auth/login
+    body:
+      encoding: UTF-8
+      string: '{"email":"noel@miller.com","password":"password"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"7712e5a56b9c9bfe0db8d510625d2273"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 82a0de6e-0413-47fd-8ae9-9279c4ec9fcf
+      X-Runtime:
+      - '0.435410'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"user_id":518,"auth_token":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MTgsImV4cCI6MTYzNTU5NzUwMX0.3GP5hDqW8ewOpSPAbiWvmt3oXrdLyZU_9erkDDOIgK0"}'
+  recorded_at: Fri, 29 Oct 2021 12:38:21 GMT
+- request:
+    method: put
+    uri: http://127.0.0.1:3000/todos/518
+    body:
+      encoding: UTF-8
+      string: '{"title":"New update","deadline":"2021-10-30"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MTgsImV4cCI6MTYzNTU5NzUwMX0.3GP5hDqW8ewOpSPAbiWvmt3oXrdLyZU_9erkDDOIgK0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"88eb282ea3feb28d56f38a05869e86c7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 29176a06-9352-4c46-8683-6df217c7f573
+      X-Runtime:
+      - '0.015406'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":518,"title":"New update","created_by":"432","created_at":"2021-10-28T14:45:47.451Z","deadline":"2021-10-30","items":[]}'
+  recorded_at: Fri, 29 Oct 2021 12:38:21 GMT
+recorded_with: VCR 6.0.0

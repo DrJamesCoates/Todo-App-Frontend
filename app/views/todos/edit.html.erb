@@ -8,10 +8,10 @@
     <%= form_with(url: todo_url, method: :put, local: true) do |f| %>
 
       <%= f.label :title %>
-      <%= f.text_field :title, class: "form-control", value: @title %>
+      <%= f.text_field :title, class: "form-control", value: @todo.title %>
 
       <%= f.label :deadline %>
-      <%= f.date_field :deadline, min: Date.today, class: "form-control", value: @deadline %>
+      <%= f.date_field :deadline, min: Date.today, class: "form-control", value: @todo.deadline %>
 
       <%= f.submit "Update todo", class: "btn btn-primary" %>
     

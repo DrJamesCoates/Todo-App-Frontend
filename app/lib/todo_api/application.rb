@@ -1,6 +1,5 @@
-class TodoApi::Application < ActionController::Metal
+class TodoApi::Application < ActionController::Base
 
-  # for valid token method
   include SessionsHelper
 
   BASE_REQUEST_URL = 'http://127.0.0.1:3000'

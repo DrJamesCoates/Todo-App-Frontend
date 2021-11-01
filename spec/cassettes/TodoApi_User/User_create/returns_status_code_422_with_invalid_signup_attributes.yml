@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:3000/signup
+    body:
+      encoding: UTF-8
+      string: '{"name":"","email":"","password":"foo","password_confirmation":"bar"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 17d5f9f7-cdfb-4a59-af90-12c69fe31ecd
+      X-Runtime:
+      - '0.224075'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"message":"Validation failed: Password confirmation doesn''t match
+        Password, Name can''t be blank, Email can''t be blank"}'
+  recorded_at: Fri, 29 Oct 2021 09:57:41 GMT
+recorded_with: VCR 6.0.0

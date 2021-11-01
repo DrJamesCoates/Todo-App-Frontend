@@ -25,8 +25,22 @@ class TodoApi::Item < TodoApi::Application
       }.to_json
     )
     @response_object = JSON.parse(@response.body, symbolize_names: true)
-    @id = @response_object[:items][0][:id]
-    @done = @response_object[:items][0][:done]
+    @id = @response_object[:items][0][:id] if @response_object[:items]
+    @done = @response_object[:items][0][:done] if @response_object[:items]
+  end
+
+  def show
+    show_item_url = BASE_REQUEST_URL + "/todos/#{@todo_id}/items/#{@id}"
+    @response = HTTParty.get(
+      show_item_url, 
+      headers: {
+        "Content-Type" => "application/json", 
+        "Authorization" => @auth_token
+      }
+    )
+    @response_object = JSON.parse(@response.body, symbolize_names: true)
+    @name = @response_object[:name]
+    @done = @response_object[:done]
   end
 
   def update(item_params)

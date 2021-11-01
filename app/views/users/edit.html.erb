@@ -10,10 +10,10 @@
       <%= f.hidden_field :id, value: @id %>
 
       <%= f.label :name %>
-      <%= f.text_field :name, class: "form-control", value: @name %>
+      <%= f.text_field :name, class: "form-control", value: @user.name %>
 
       <%= f.label :email %>
-      <%= f.email_field :email, class: "form-control", value: @email %>
+      <%= f.email_field :email, class: "form-control", value: @user.email %>
 
       <%= f.label :password %>
       <%= f.password_field :password, class: "form-control", value: session[:password] %>

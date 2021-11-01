@@ -7,10 +7,10 @@
 
     <%= form_with(url: todo_item_url, method: :put, local: true) do |f| %>
 
-      <%= f.hidden_field :done, value: @done %>
+      <%= f.hidden_field :done, value: @item.done %>
 
       <%= f.label :name %>
-      <%= f.text_field :name,  class: "form-control" %>
+      <%= f.text_field :name,  class: "form-control", value: @item.name %>
 
       <%= f.submit "Update item", class: "btn btn-primary" %>
     

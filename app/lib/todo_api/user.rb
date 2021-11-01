@@ -2,9 +2,11 @@ class TodoApi::User < TodoApi::Application
 
   attr_reader :id, :auth_token, :name, :response, :email
 
-  def initialize(id = nil, auth_token = nil)
+  def initialize(id = nil, auth_token = nil, name = nil, email = nil)
     @id = id
     @auth_token = auth_token
+    @name = name
+    @email = email
   end
   
   def create(user_params)

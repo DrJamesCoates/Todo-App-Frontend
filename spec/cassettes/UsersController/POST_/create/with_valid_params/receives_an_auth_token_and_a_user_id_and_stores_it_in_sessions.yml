@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:3000/signup
+    body:
+      encoding: UTF-8
+      string: '{"name":"Noel Miller","email":"noel@miller.com","password":"password","password_confirmation":"password"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"3c508b8a3e73d6789d88568a23f18402"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ee7b7b86-a503-40fc-9ad8-114229c4bc49
+      X-Runtime:
+      - '0.697465'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"message":"Account created successfully","auth_token":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MTcsImV4cCI6MTYzNTU5MzUzOH0.yaP-S3_yRTbrKI_fvAXpQ4laMK4xN3rruarAdmu3Xr4","user_id":518}'
+  recorded_at: Fri, 29 Oct 2021 11:32:18 GMT
+recorded_with: VCR 6.0.0

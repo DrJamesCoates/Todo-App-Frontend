@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:3000/signup
+    body:
+      encoding: UTF-8
+      string: '{"name":"Signup Name","email":"signup@email.com","password":"password","password_confirmation":"password"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"24ab86a1603a0d2e9cb75d9fe03b3a1d"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a515af99-ecad-41a8-bc97-3b39ea9f85f5
+      X-Runtime:
+      - '0.661038'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"message":"Account created successfully","auth_token":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0OTcsImV4cCI6MTYzNTU4Nzg2MX0.vMRmamj3fe6F6wblt2q8i0T8eu4aSwzzaifdRi8MC9Q","user_id":513}'
+  recorded_at: Fri, 29 Oct 2021 09:57:41 GMT
+recorded_with: VCR 6.0.0

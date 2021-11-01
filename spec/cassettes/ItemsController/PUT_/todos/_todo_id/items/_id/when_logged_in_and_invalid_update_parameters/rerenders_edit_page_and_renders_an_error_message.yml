@@ -1,0 +1,185 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:3000/auth/login
+    body:
+      encoding: UTF-8
+      string: '{"email":"noel@miller.com","password":"password"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Etag:
+      - W/"980ed2590663f6b58a7474a97e862ea3"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 79c8bab4-fe38-4e97-a0b1-ba881b3e150c
+      X-Runtime:
+      - '0.440193'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"user_id":518,"auth_token":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MTgsImV4cCI6MTYzNTU5OTQyNn0.gBdCPHTF7PG1KUP-SiDxmhmxVBh-dQXz4AcT2CLNhq4"}'
+  recorded_at: Fri, 29 Oct 2021 13:10:26 GMT
+- request:
+    method: put
+    uri: http://127.0.0.1:3000/todos/518/items/240
+    body:
+      encoding: UTF-8
+      string: '{"name":"","done":null}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1MTgsImV4cCI6MTYzNTU5OTQyNn0.gBdCPHTF7PG1KUP-SiDxmhmxVBh-dQXz4AcT2CLNhq4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 01d3c0fb-a8de-4abb-98c7-bd841c0c86bb
+      X-Runtime:
+      - '0.008399'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"message":"Validation failed: Name can''t be blank"}'
+  recorded_at: Fri, 29 Oct 2021 13:10:26 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:3000/todos//items/240
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Request-Id:
+      - 8fdd6a7e-fb7f-482d-8978-8da6865d1c2c
+      X-Runtime:
+      - '0.004618'
+      Content-Length:
+      - '5582'
+    body:
+      encoding: UTF-8
+      string: '{"status":404,"error":"Not Found","exception":"#\u003cActionController::RoutingError:
+        No route matches [GET] \"/todos/items/240\"\u003e","traces":{"Application
+        Trace":[],"Framework Trace":[{"exception_object_id":22840,"id":0,"trace":"actionpack
+        (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:33:in `call''"},{"exception_object_id":22840,"id":1,"trace":"actionpack
+        (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call''"},{"exception_object_id":22840,"id":2,"trace":"railties
+        (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app''"},{"exception_object_id":22840,"id":3,"trace":"railties
+        (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call''"},{"exception_object_id":22840,"id":4,"trace":"activesupport
+        (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged''"},{"exception_object_id":22840,"id":5,"trace":"activesupport
+        (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged''"},{"exception_object_id":22840,"id":6,"trace":"activesupport
+        (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged''"},{"exception_object_id":22840,"id":7,"trace":"railties
+        (6.1.4.1) lib/rails/rack/logger.rb:26:in `call''"},{"exception_object_id":22840,"id":8,"trace":"actionpack
+        (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call''"},{"exception_object_id":22840,"id":9,"trace":"actionpack
+        (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call''"},{"exception_object_id":22840,"id":10,"trace":"rack
+        (2.2.3) lib/rack/runtime.rb:22:in `call''"},{"exception_object_id":22840,"id":11,"trace":"activesupport
+        (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in
+        `call''"},{"exception_object_id":22840,"id":12,"trace":"actionpack (6.1.4.1)
+        lib/action_dispatch/middleware/executor.rb:14:in `call''"},{"exception_object_id":22840,"id":13,"trace":"actionpack
+        (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call''"},{"exception_object_id":22840,"id":14,"trace":"rack
+        (2.2.3) lib/rack/sendfile.rb:110:in `call''"},{"exception_object_id":22840,"id":15,"trace":"actionpack
+        (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call''"},{"exception_object_id":22840,"id":16,"trace":"railties
+        (6.1.4.1) lib/rails/engine.rb:539:in `call''"},{"exception_object_id":22840,"id":17,"trace":"puma
+        (5.5.0) lib/puma/configuration.rb:249:in `call''"},{"exception_object_id":22840,"id":18,"trace":"puma
+        (5.5.0) lib/puma/request.rb:77:in `block in handle_request''"},{"exception_object_id":22840,"id":19,"trace":"puma
+        (5.5.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown''"},{"exception_object_id":22840,"id":20,"trace":"puma
+        (5.5.0) lib/puma/request.rb:76:in `handle_request''"},{"exception_object_id":22840,"id":21,"trace":"puma
+        (5.5.0) lib/puma/server.rb:447:in `process_client''"},{"exception_object_id":22840,"id":22,"trace":"puma
+        (5.5.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread''"}],"Full Trace":[{"exception_object_id":22840,"id":0,"trace":"actionpack
+        (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:33:in `call''"},{"exception_object_id":22840,"id":1,"trace":"actionpack
+        (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call''"},{"exception_object_id":22840,"id":2,"trace":"railties
+        (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app''"},{"exception_object_id":22840,"id":3,"trace":"railties
+        (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call''"},{"exception_object_id":22840,"id":4,"trace":"activesupport
+        (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged''"},{"exception_object_id":22840,"id":5,"trace":"activesupport
+        (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged''"},{"exception_object_id":22840,"id":6,"trace":"activesupport
+        (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged''"},{"exception_object_id":22840,"id":7,"trace":"railties
+        (6.1.4.1) lib/rails/rack/logger.rb:26:in `call''"},{"exception_object_id":22840,"id":8,"trace":"actionpack
+        (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call''"},{"exception_object_id":22840,"id":9,"trace":"actionpack
+        (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call''"},{"exception_object_id":22840,"id":10,"trace":"rack
+        (2.2.3) lib/rack/runtime.rb:22:in `call''"},{"exception_object_id":22840,"id":11,"trace":"activesupport
+        (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in
+        `call''"},{"exception_object_id":22840,"id":12,"trace":"actionpack (6.1.4.1)
+        lib/action_dispatch/middleware/executor.rb:14:in `call''"},{"exception_object_id":22840,"id":13,"trace":"actionpack
+        (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call''"},{"exception_object_id":22840,"id":14,"trace":"rack
+        (2.2.3) lib/rack/sendfile.rb:110:in `call''"},{"exception_object_id":22840,"id":15,"trace":"actionpack
+        (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call''"},{"exception_object_id":22840,"id":16,"trace":"railties
+        (6.1.4.1) lib/rails/engine.rb:539:in `call''"},{"exception_object_id":22840,"id":17,"trace":"puma
+        (5.5.0) lib/puma/configuration.rb:249:in `call''"},{"exception_object_id":22840,"id":18,"trace":"puma
+        (5.5.0) lib/puma/request.rb:77:in `block in handle_request''"},{"exception_object_id":22840,"id":19,"trace":"puma
+        (5.5.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown''"},{"exception_object_id":22840,"id":20,"trace":"puma
+        (5.5.0) lib/puma/request.rb:76:in `handle_request''"},{"exception_object_id":22840,"id":21,"trace":"puma
+        (5.5.0) lib/puma/server.rb:447:in `process_client''"},{"exception_object_id":22840,"id":22,"trace":"puma
+        (5.5.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread''"}]}}'
+  recorded_at: Fri, 29 Oct 2021 13:10:26 GMT
+recorded_with: VCR 6.0.0
